@@ -1,0 +1,54 @@
+html{
+    color : whitesmoke;
+  }
+h1 {
+	display: flex;/* c'est pour mettre le texte au milieu */
+	justify-content: space-around;/* c'est pour mettre le texte au milieu */
+}
+
+
+h1
+{
+    color:rgba(247, 8, 207, 0.767) ; /*changer la couleur des titres h1 */ 
+} 
+
+h2
+{
+    color: black /* chang coul titres h2 */
+}
+
+table{
+
+	border-collapse: collapse; /*les bordures du tableau seron collé*/
+	
+}
+  
+tr :hover {
+    background-color : rgba(247, 8, 207, 0.767) ; /* changer la couleur de la ligne*/
+}
+
+a:hover{
+    color: rgba(144, 214, 247, 0.767); /*changer la couleur d'un lien*/
+
+    font-size: 1.4em; /* changer la taille de la police au survol de la souris */
+      
+}
+
+img:hover{
+	width: 80px;
+	height: 80px;
+}
+
+@media only screen and (max-width: 600px) {
+    table {
+        width: auto;/*occuper lespace en largeur auto*/
+    }
+  }
+  body
+{
+    background-image: url("fond2.jpg");
+    
+    
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
