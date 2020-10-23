@@ -1,3 +1,4 @@
+
 html{
     color : whitesmoke;
   }
@@ -28,7 +29,7 @@ tr :hover {
 }
 
 a:hover{
-    color: rgba(144, 214, 247, 0.767); /*changer la couleur d'un lien*/
+    color: rgba(133, 224, 240, 0.767); /*changer la couleur d'un lien*/
 
     font-size: 1.4em; /* changer la taille de la police au survol de la souris */
       
