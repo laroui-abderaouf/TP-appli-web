@@ -1,0 +1,12 @@
+#error {
+  padding: 5px;
+  border:  1px solid black;
+  background-color: rgb(240, 181, 181);
+}
+
+#resultat {
+  color: white;
+  padding: 5px;
+  background-color: rgb(35, 218, 35);
+  border: 1px solid black;
+}

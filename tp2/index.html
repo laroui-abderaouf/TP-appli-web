@@ -7,16 +7,21 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <script type="text/javascript" src="formulaire.js"></script>
+        <link rel="stylesheet" href="styleTP2.css" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-
+        
+           
+          
         <style>
           body{
               background-color: #e9ebee;              
               font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
               font-size: 16px;
-              margin: 0 auto;
-              max-width: 800px;              
+              margin: 25px auto 25px auto;
+              max-width: 800px;  
+                         
           }
         </style>
         
@@ -24,10 +29,82 @@
         <!--<link rel="stylesheet" href="style.css">-->
         <!--<script src="js/main.js"></script>-->
     </head>
-    <body>        
-        <h1>tp2</h1>
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
+    <body>     
+        <head>
+            <meta charset="utf-8">
+            <title>Favorite fruit start</title>
+            <style>
+              input:invalid {
+                border: 2px dashed red; /* c'est pour avoir le contour en rouge si le texte n'est pas conforme */
+              }
+        
+              input:valid {
+                border: 2px solid green; /* le contour est vert si le texte est valide */
+              }
+            </style>
+        </head>   
+        <h1>Saisie d'une fiche "Personne"</h1>
+        <form action="traitement.php" method="POST" id="myForm">
+            <script type="text/javascript" src="formulaire.js"></script>
+            <fieldset>
+                <legend>Formulaire a remplire </legend>
+
+            <table width= "70%" border="0">
+                
+                <tr>
+                    <td><label for="nom">NOM:</label> </td>
+                    <td> <input type="text" id="nom" Nom="nom_utilisateur"  minlength="5" maxlength="20"   </td>
+                </tr>
+
+                <tr>
+                    <td><label for="prénom">PRENOM:</label> </td>
+                    <td> <input type="text" id="prénom" Nom="prénom_utilisateur" minlength="5" maxlength="20"  </td>
+
+                </tr>
+              
+                <tr>
+                    <td><label for="dn">DATE DE NAISSANCE:</label> </td>
+                    <td> <input type="date" id="dn" Nom="dn_utilisateur" placeholder="JJ/MM/AAAA" </td>
+                </tr>
+
+                <tr>
+                    <td><label for="adr">ADRESSE :</label> </td>
+                    <td> <input type="text" id="adr" Nom="adr_utilisateur" minlength="5" maxlength="50" </td>
+                </tr>
+
+                <tr>
+                     <td><label for="mail">MAIL:</label> </td>
+                     <td> <input type="email" id="mail" Nom="mail_utilisateur" minlength="5" maxlength="30"  </td>
+                </tr>
+              
+                <tr>
+                   <td></td>
+                   
+                   <td> <input type="button" value="Valider"/> </td>
+        
+                    
+                </tr>
+
+            </table> 
+            </fieldset><br>
+
+            
+            
+            <span id="error"> Le nom doit contenir au moins 5 caracteres </span> <br><br>
+            <span id="resultat"> Bonjour </span>
+    
+        </form>
+
+       
+       
+   
+   
+   
+   
+   
+   
+   
+   
+   
     </body>
 </html>
