@@ -38,62 +38,86 @@
                 border: 2px dashed red; /* c'est pour avoir le contour en rouge si le texte n'est pas conforme */
               }
         
-              input:valid {
-                border: 2px solid green; /* le contour est vert si le texte est valide */
-              }
+              
             </style>
         </head>   
         <h1>Saisie d'une fiche "Personne"</h1>
+
+
         <form action="traitement.php" method="POST" id="myForm">
+
             <script type="text/javascript" src="formulaire.js"></script>
+
             <fieldset>
+
                 <legend>Formulaire a remplire </legend>
 
             <table width= "70%" border="0">
                 
                 <tr>
-                    <td><label for="nom">NOM:</label> </td>
-                    <td> <input type="text" id="nom" Nom="nom_utilisateur"  minlength="5" maxlength="20" required   </td>
+                    <td><label for="nom">NOM:</label> </td> /*  label c'est pour utiliser juste le clavier en remplissant le formulaire */
+                    <td> <input type="text" id="nom" name="nom"  minlength="5" maxlength="20" required   </td>
                 </tr>
 
                 <tr>
                     <td><label for="prénom">PRENOM:</label> </td>
-                    <td> <input type="text" id="prénom" Nom="prénom_utilisateur" minlength="5" maxlength="20" required  </td>
+                    <td> <input type="text" id="prénom" name="prénom" minlength="5" maxlength="20" required  </td>
 
                 </tr>
               
                 <tr>
                     <td><label for="dn">DATE DE NAISSANCE:</label> </td>
-                    <td> <input type="date" id="dn" Nom="dn_utilisateur" placeholder="JJ/MM/AAAA" required </td>
+                    <td> <input type="date" id="dn" name="dn" placeholder="JJ/MM/AAAA" required </td>
                 </tr>
 
                 <tr>
                     <td><label for="adr">ADRESSE :</label> </td>
-                    <td> <input type="text" id="adr" Nom="adr_utilisateur" minlength="5" maxlength="50" required </td>
+                    <td> <input type="text" id="adr" name="adr" minlength="5" maxlength="50" required </td>
                 </tr>
 
                 <tr>
                      <td><label for="mail">MAIL:</label> </td>
-                     <td> <input type="email" id="mail" Nom="mail_utilisateur" minlength="5" maxlength="30" required  </td>
+                     <td> <input type="email" id="mail" name="mail" minlength="5" maxlength="30" required  </td>
                 </tr>
               
                 <tr>
                    <td></td>
                    
-                   <td> <input type="button" value="Valider"/> </td>
+                   <td> <input type="submit" value="valider" id="bouton_envoi"/> </td>
         
                     
                 </tr>
 
             </table> 
+
             </fieldset><br>
 
             
-            
             <span id="error"> Le nom doit contenir au moins 5 caracteres </span> <br><br>
             <span id="resultat"> Bonjour </span>
+            
     
         </form>
+
+        <script>
+            var formValid = document.getElementById('bouton_envoi');
+            var prénom = document.getElementById('prénom');
+            var missPrénom = document.getElementById('missPrénom');
+
+
+            formValid.addEventListener('click', validation);
+
+            function validation(){
+                //si le champ est vide
+
+                if(prenom.validity.valueMissing){
+                    event.preventDefault();
+                    missPrénom.textContent = 'prénom manquant';
+                    missPrénom.style.color ='red' ;
+                }
+
+            }
+        </script>
 
        
        
