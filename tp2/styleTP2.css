@@ -1,12 +1,15 @@
-#error {
-  padding: 5px;
-  border:  1px solid black;
-  background-color: rgb(240, 181, 181);
-}
 
-#resultat {
-  color: white;
+#erreur{
+  background-color: indianred;
+  color:black;
+  font-size: 15pt;
+  
+
+}
+#resultat{
   padding: 5px;
-  background-color: rgb(35, 218, 35);
-  border: 1px solid black;
+  color:green;
+  font-size: 15pt;
+  
+  
 }
