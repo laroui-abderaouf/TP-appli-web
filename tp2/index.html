@@ -55,20 +55,7 @@
         <h1>Saisie d'une fiche "Personne"</h1>
 
 
-        <script >
-            function controle(){
-
-            var saisie =document.getElementById("nom").value.length;
-            var nom =document.getElementById("nom").value;
-            if(saisie<5){
-                document.getElementById("erreur").innerHTML="le nom doit contenir 5 caracteres ";
-            }
-            else {
-	            document.getElementById("resultat").innerHTML="Bonjour "+nom;
-            }
-            }
-
-        </script>
+        
 
         <form>
         
@@ -83,35 +70,35 @@
                 
                 <tr>
                     <td><label for="nom">NOM:</label> </td> 
-                    <td> <input type="text" id="nom" name="nom"  minlength="5" maxlength="20"    </td>
+                    <td> <input type="text" id="nom" name="nom"  minlength="5" maxlength="20"  required  </td>
                     <td> <span id='nom_manquant'></span></td>
                     </tr>
 
                 <tr>
                     <td><label for="prénom">PRENOM:</label> </td>
-                    <td> <input type="text" id="prénom" name="prénom" minlength="5" maxlength="20"   </td>
+                    <td> <input type="text" id="prénom" name="prénom" minlength="5" maxlength="20" required  </td>
 
                 </tr>
               
                 <tr>
                     <td><label for="dn">DATE DE NAISSANCE:</label> </td>
-                    <td> <input type="date" id="dn" name="dn" placeholder="JJ/MM/AAAA"  </td>
+                    <td> <input type="date" id="dn" name="dn" placeholder="JJ/MM/AAAA" required  </td>
                 </tr>
 
                 <tr>
                     <td><label for="adr">ADRESSE :</label> </td>
-                    <td> <input type="text" id="adr" name="adr" minlength="5" maxlength="50"  </td>
+                    <td> <input type="text" id="adr" name="adr" minlength="5" maxlength="50" required </td>
                 </tr>
 
                 <tr>
                      <td><label for="mail">MAIL:</label> </td>
-                     <td> <input type="email" id="mail" name="mail" minlength="5" maxlength="30" </td>
+                     <td> <input type="email" id="mail" name="mail" minlength="5" maxlength="30" required </td>
                 </tr>
               
                 <tr>
                    <td></td>
                    
-                   <td> <button type="button" onclick="controle()">Essayer</button> </td>
+                   <td> <button type="button" onclick="controle()">Valider</button> </td>
         
                     
                 </tr>
