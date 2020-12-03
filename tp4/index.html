@@ -1,33 +1,179 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>TP4</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>TP4</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <style>
-          body{
-              background-color: #e9ebee;              
-              font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-              font-size: 16px;
-              margin: 0 auto;
-              max-width: 800px;              
-          }
-        </style>
-        
-        <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-        <!--<link rel="stylesheet" href="style.css">-->
-        <!--<script src="main.js"></script>-->
-    </head>
-    <body>        
-        <h1>TP4</h1>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/store.js"> </script>
+    <script src="js/gps.js"> </script>
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/form-jquery-validation.js"></script>
+
+
+    <script>
+        function Keypress() {
+            var
+            total = document.getElementById('nom').value.length;
+            total1 = document.getElementById('prenom').value.length;
+
+
+            total4 = document.getElementById('mail').value.length;
+
+            document.getElementById('compteur').innerHTML = total + " Caractere(s)";
+            document.getElementById('compteur1').innerHTML = total1 + " Caractere(s)";
+
+
+            document.getElementById('compteur4').innerHTML = total4 + " Caractere(s)";
+
+
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Ajouter un contact</h2>
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
-    </body>
+
+        <form>
+            <div class="form-row">
+                <div class="form-group col-2">
+                    <label for="nom"><strong>nom</strong></label>
+                </div>
+                <div class="form-group col">
+                    <input type="text" class="form-control" placeholder="Nom" id="nom" onkeyup="Keypress();">
+                </div>
+                <div class="form-group col-2">
+                    <div id="compteur"></div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-2">
+                    <label for="prenom"><strong>Prénom</strong></label>
+                </div>
+                <div class="form-group col">
+                    <input type="text" class="form-control" placeholder="Prenom" id="prenom" onkeyup="Keypress();">
+                </div>
+                <div class="form-group col-2">
+                    <div id="compteur1"></div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-2">
+                    <label for="date"><strong>Date de naissance</strong></label>
+                    
+                </div>
+                <div class="form-group col">
+                    <input type="date" class="form-control" placeholder="" id="date" >
+                </div>
+                <div class="form-group col-2">
+                    
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-2">
+                    <label for="adresse"><strong>Adresse</strong></label>
+                </div>
+
+                <div class="form-group col">
+                    <input type="text" class="form-control" placeholder="" id="adresse" />
+                    <div id="map">
+                        <!--  image Google Map à mettre à jour -->
+                        <img alt="map" width="200"
+                            src="https://maps.googleapis.com/maps/api/staticmap?markers=latitude,longitude&zoom=14&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg" />
+                    </div>
+                </div>
+                <div class="form-group col-1">
+                    <button class="btn btn-warning" type="button" id="gps">📍 GPS</button>
+                  </div>
+
+            
+            
+            <div class="col-1">
+                
+            </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-2">
+            <label for="mail"><strong>Mail</strong></label>
+        </div>
+        <div class="form-group col">
+            <input type="email" class="form-control" placeholder="Votre adresse mail" id="mail" onkeyup="Keypress();">
+        </div>
+        <div class="form-group col-2">
+            <div id="compteur4"></div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col">
+            <button type="button" id="Ajouter" class="btn btn-primary">Ajouter</button>
+        </div>
+    </div>
+    </form>
+
+
+    <table class="table table-striped">
+			
+        <thead>
+            <tr>
+                <th scope="col"><h4>Liste des contactes</h4></th>
+              </tr>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Date</th>
+            <th scope="col">Adresse</th>
+            <th scope="col">Mail</th>
+          </tr>
+        </thead>
+        <tbody>
+    
+        </tbody>
+      </table>
+
+
+
+
+
+
+
+
+    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Corps de la modal à modifier après validation du formulaire</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+          
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</body>
+
 </html>
